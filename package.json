@@ -1,0 +1,45 @@
+{
+  "name": "init",
+  "version": "1.0.0",
+  "description": "this is demo about webpack4",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack-dev-server  --progress  --mode development",
+    "preview": "pushstate-server ./dist 1234",
+    "build": "rimraf dist && webpack --bail --progress --profile  --config ./webpack.prod",
+    "test": "webpack --progress --mode  production"
+  },
+  "keywords": [
+    "react",
+    "webpack"
+  ],
+  "author": "kangaroo",
+  "license": "ISC",
+  "dependencies": {
+    "bizcharts": "^3.2.2",
+    "lodash": "^4.17.10",
+    "npm": "^6.4.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "node-sass": "^4.9.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "pushstate-server": "^3.0.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7"
+  }
+}
