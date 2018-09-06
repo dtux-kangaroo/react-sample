@@ -114,7 +114,7 @@ module.exports = {
         alias: { //创建 import 或 require 的别名，来确保模块引入变得更简单
             pages: path.resolve(__dirname, 'src/pages/'),
             assets: path.resolve(__dirname, 'src/assets/'),
-            component: path.resolve(__dirname, 'src/component/'),
+            component: path.resolve(__dirname, 'src/components/'),
             tpls: path.resolve(__dirname, 'src/tpls/')
         },
         modules: [
