@@ -58,13 +58,13 @@ module.exports = {
     contentBase: require('path').join(__dirname, "dist"),
     compress: true, //服务都启用gzip 压缩：
     hot: true,
-    //historyApiFallback: true,//h5 history api时任意的 404 响应都可能需要被替代为 index.html
+    inline:true,
+    historyApiFallback: true,//h5 history api时任意的 404 响应都可能需要被替代为 index.html
     port: 8080,
     host: "127.0.0.1",
     proxy: [{
         context: ['/auth', '/api'],
         target: 'http://localhost:3000',
-    }],
-    hotOnly: true, 
+    }], 
   }
 };

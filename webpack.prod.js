@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = {
     mode: "production", //编译模式3
+    //target
     context: __dirname, // webpack 的主目录(绝对路径)entry 和 module.rules.loader等相对于此目录解析
     target: "web", //7种方式 node,web,默认web，做web一般不用设置
     //devtool:"source-map",
@@ -99,13 +100,8 @@ module.exports = {
                     test: /[\\/]bizcharts[\\/]/,
                     name: 'biz',
                     chunks: 'all',
-                },
-                styles: {
-                    name: 'styles',
-                    test: /\.css$/,
-                    chunks: 'all',
-                    enforce: true
-                  }
+                }         
+                
             }
         }
     },
@@ -124,4 +120,4 @@ module.exports = {
     },
     externals: { //防止将某些 import 的包(package)打包到 bundle 中，而是在运行时(runtime)再去从外部获取这些扩展依赖         
     }
-};
+}
