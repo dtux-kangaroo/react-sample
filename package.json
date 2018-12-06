@@ -9,7 +9,9 @@
     "preview": "pushstate-server ./dist 1234",
     "build": "rimraf dist && webpack --bail --progress --profile  --config ./webpack.prod",
     "test": "webpack --progress --mode  production",
-    "happypack": "rimraf dist &&webpack --bail --progress --profile  --config ./happypack "
+    "happypack": "rimraf dist &&webpack --bail --progress --profile  --config ./webpack.happypack ",
+    "build:dll":"rimraf dist &&rimraf dll&&webpack --bail --progress --profile  --config ./webpack.dll.config",
+    "dev:dll":"webpack-dev-server --progress --mode development  --config ./webpack.dev"
   },
   "keywords": [
     "react",
