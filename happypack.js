@@ -1,16 +1,18 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack');
 const path = require('path');
+const HappyPack = require('happypack');
+const os = require('os');
+const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
+
 module.exports = {
   devtool: 'cheap-eval-source-map', //eval-source-map //此选项控制是否生成，以及如何生成 source map
   module: { //这些选项决定了如何处理项目中的不同类型的模块。
     rules: [{
         test: /\.js$/,
-        exclude: /(node_modules)/, //处理该文件时，排除的目录，建议使用include
-        use: {
-          loader: 'babel-loader?cacheDirectory',
-          options: {}
-        }
+        loader: 'happypack/loader?id=happyBabel',
+        //排除node_modules 目录下的文件
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -33,6 +35,18 @@ module.exports = {
     hints: false, // 关闭性能提示
 },
   plugins: [
+    new HappyPack({
+        //用id来标识 happypack处理那里类文件
+      id: 'happyBabel',
+      //如何处理  用法和loader 的配置一样
+      use: [{
+        loader: 'babel-loader?cacheDirectory=true',
+      }],
+      //共享进程池
+      threadPool: happyThreadPool,
+      //允许 HappyPack 输出日志
+      //verbose: true,
+    }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html"

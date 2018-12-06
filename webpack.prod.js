@@ -73,6 +73,7 @@ module.exports = {
             name: 'manifest'
         },
         minimize: true, //无需配置
+        //nameModules:true, //变异的的文件以名字显示
         noEmitOnErrors: true, //跳过错误的编译
         minimizer: [
             new UglifyJsPlugin({

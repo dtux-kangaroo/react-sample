@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server  --progress  --mode development",
     "preview": "pushstate-server ./dist 1234",
     "build": "rimraf dist && webpack --bail --progress --profile  --config ./webpack.prod",
-    "test": "webpack --progress --mode  production"
+    "test": "webpack --progress --mode  production",
+    "happypack": "webpack --bail --progress --profile --mode development  --config ./happypack "
   },
   "keywords": [
     "react",
@@ -31,6 +32,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.0",
     "css-loader": "^1.0.0",
+    "happypack": "^5.0.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.2",
     "node-sass": "^4.9.3",
