@@ -2,8 +2,11 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack');
 const path = require('path');
 const HappyPack = require('happypack');
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 const os = require('os');
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
+
+
 module.exports = {
   devtool: 'cheap-eval-source-map', //eval-source-map //此选项控制是否生成，以及如何生成 source map
   module: { //这些选项决定了如何处理项目中的不同类型的模块。
@@ -46,11 +49,22 @@ module.exports = {
     }),
     new webpack.DllReferencePlugin({
         context: __dirname, // 与DllPlugin中的那个context保持一致
-        manifest: require('./dll/manifest.json')
+        manifest: require('./dll/vendor-manifest.json')
     }),
+    new webpack.DllReferencePlugin({
+        context: __dirname, // 与DllPlugin中的那个context保持一致
+        manifest: require('./dll/bizcharts-manifest.json')
+    }),
+    new CopyWebpackPlugin([{
+        from: path.resolve(__dirname, './dll'),
+        to: path.resolve(__dirname, 'dist','dll'),
+        ignore: ['*-manifest.json']
+      }]),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
-      filename: "./index.html"
+      filename: "./index.html",
+      bizcharts:"/dll/dll.bizcharts.js",
+      vendor:"/dll/dll.vendor.js",
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
@@ -75,7 +89,7 @@ module.exports = {
     hot: true,
     inline:true,//自动涮下模式，
     historyApiFallback: true,//h5 history api时任意的 404 响应都可能需要被替代为 index.html
-    port: 8080,
+    port: 8082,
     host: "127.0.0.1",
     proxy: [{
         context: ['/auth', '/api'],

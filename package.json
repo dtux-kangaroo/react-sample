@@ -10,8 +10,8 @@
     "build": "rimraf dist && webpack --bail --progress --profile  --config ./webpack.prod",
     "test": "webpack --progress --mode  production",
     "happypack": "rimraf dist &&webpack --bail --progress --profile  --config ./webpack.happypack ",
-    "build:dll":"rimraf dist &&rimraf dll&&webpack --bail --progress --profile  --config ./webpack.dll.config",
-    "dev:dll":"webpack-dev-server --progress --mode development  --config ./webpack.dev"
+    "build:dll": "webpack --bail --progress --profile  --config ./webpack.dll.config",
+    "dev:dll": "webpack-dev-server --progress --mode development  --config ./webpack.dev"
   },
   "keywords": [
     "react",
@@ -33,6 +33,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.0",
+    "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.0",
     "happypack": "^5.0.0",
     "html-webpack-plugin": "^3.2.0",
