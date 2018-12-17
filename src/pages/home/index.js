@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss'
-import Header from 'component/header'
+import Header from '../../components/header'
 import { Chart, Axis, Geom, Tooltip } from 'bizcharts'
 export default class Home extends React.Component{
     render(){
