@@ -22,13 +22,17 @@ module.exports = (context) => {
         new webpack.DefinePlugin({
           ASSETS_VERSION: '0.0.1',
         }),
-        new CopyWebpackPlugin([{
-          from: path.resolve('dll'),
-          to: path.resolve('test')
-        }])
+        new CopyWebpackPlugin([
+          {
+            from: path.resolve('dll'),
+            to: path.resolve('test')
+          },
+          {from: path.resolve(__dirname,'public/mock'),to:'./mock'}
+        ])
       ],
       resolve: {
         alias: { 
+          "@": path.resolve(__dirname, 'src'),
           assets: path.resolve(__dirname, 'public/assets/'),
           pages: path.resolve(__dirname, 'src/pages/'),
           component: path.resolve(__dirname, 'src/components/'),

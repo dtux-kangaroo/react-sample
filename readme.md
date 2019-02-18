@@ -12,13 +12,13 @@ npm install  或者cnpm install 或者yarn(推荐)
 
 3、运行脚手架。
  ```js
- 1.npm run ko-dll  //生成动态链接库文件
+ 1.npm run dll  //生成动态链接库文件
 
- 2.npm run ko-dev //启动开发环境
+ 2.npm run dev //启动开发环境
 
- 3.npm run ko-build //打包静态文件
+ 3.npm run build //打包静态文件
 
- 4.npm run ko-preview //预览打包后的文件
+ 4.npm run preview //预览打包后的文件
 
  ```
 

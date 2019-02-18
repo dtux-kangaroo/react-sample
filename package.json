@@ -5,14 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "webpack-dev-server  --progress  --mode development",
-    "preview": "pushstate-server ./dist 1234",
-    "build": "rimraf dist && webpack --bail --progress --profile  --config ./webpack.prod",
-    "test": "webpack --progress --mode  production",
-    "ko-dev": "ko dev",
-    "ko-dll": "ko dll",
-    "ko-preview": "ko preview",
-    "ko-build": "ko build"
+    "dev": "ko dev",
+    "dll": "ko dll",
+    "preview": "ko preview",
+    "build": "ko build"
   },
   "keywords": [
     "react",
@@ -36,6 +32,7 @@
   },
   "devDependencies": {
     "pushstate-server": "^3.0.1",
-    "ko-script": "^1.0.0"
+    "ko-script": "^1.3.18",
+    "@babel/polyfill": "^7.2.5"
   }
 }

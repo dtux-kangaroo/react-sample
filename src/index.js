@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import routes from './router';
+import "@babel/polyfill";
 import 'assets/style/base.css' 
 import { Switch,HashRouter as Router,Route } from 'react-router-dom';
 const App = () =>
