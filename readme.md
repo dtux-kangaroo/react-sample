@@ -12,13 +12,15 @@ npm install  或者cnpm install 或者yarn(推荐)
 
 3、运行脚手架。
  ```js
- 1.npm run dll  //生成动态链接库文件
+ 1.npm run swagger  //根据输入的swagger地址生成对应的api文件
 
- 2.npm run dev //启动开发环境
+ 2.npm run dll  //生成动态链接库文件
 
- 3.npm run build //打包静态文件
+ 3.npm run dev //启动开发环境
 
- 4.npm run preview //预览打包后的文件
+ 4.npm run build //打包静态文件
+
+ 5.npm run preview //预览编译后项目静态文件
 
  ```
 
