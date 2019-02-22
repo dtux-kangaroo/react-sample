@@ -22,7 +22,7 @@ class App extends React.Component<AppProps,AppStates> {
                             <Route key={route.path} path={route.path} exact={route.exact} component={route.component} />
                         ))
                     }
-                </Switch>
+                </Switch> 
             </Router>
         )
     }
