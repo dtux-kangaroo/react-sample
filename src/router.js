@@ -1,9 +1,7 @@
 
-import Button from './pages/button';
 import Home from './pages/home';
 const routes = [
-    { path: '/', component: Home, exact: true },
-    { path: '/button', component: Button }
+    { path: '/', component: Home, exact: true }
 ];
 
 export default routes;

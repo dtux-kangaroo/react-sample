@@ -13,7 +13,7 @@ module.exports = (context) => {
       "target": "http://localhost:3000"
     }],
     webpack: {
-      entry: {},
+      // entry: {},
       output: {},
       module: {
         rules: []

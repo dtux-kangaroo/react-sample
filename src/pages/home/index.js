@@ -3,7 +3,7 @@ import './style.scss'
 import Header from '../../components/header'
 import { Chart, Axis, Geom, Tooltip } from 'bizcharts'
 
-import { API } from "@/api/index.js";
+import { API } from "@/api/index";
 export default class Home extends React.Component{
   constructor(props){
     super(props)

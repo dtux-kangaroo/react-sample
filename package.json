@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "ko dev",
+    "dev": "ko dev -t",
     "dll": "ko dll",
     "swagger":"ko swagger",
     "preview": "ko preview",
-    "build": "ko build"
+    "build": "ko build -t"
   },
   "keywords": [
     "react",
@@ -22,6 +22,7 @@
     "lodash": "^4.17.10",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "@babel/polyfill": "^7.2.5",
     "react-router-dom": "^4.3.1"
   },
   "publishConfig": {
@@ -34,6 +35,12 @@
   "devDependencies": {
     "pushstate-server": "^3.0.1",
     "ko-script": "^2.0.0",
-    "@babel/polyfill": "^7.2.5"
+    "@types/node": "^11.9.4",
+    "@types/react": "^16.8.3",
+    "@types/react-dom": "^16.8.1",
+    "@types/react-router-redux": "^5.0.18",
+    "@types/redux-actions": "^2.3.2",
+    "@types/redux-thunk": "^2.1.0",
+    "typescript": "^3.3.3"
   }
 }
