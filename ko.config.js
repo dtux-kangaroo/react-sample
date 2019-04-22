@@ -29,16 +29,7 @@ module.exports = (context) => {
           },
           {from: path.resolve(__dirname,'public/mock'),to:'./mock'}
         ])
-      ],
-      resolve: {
-        alias: { 
-          "@": path.resolve(__dirname, 'src'),
-          assets: path.resolve(__dirname, 'public/assets/'),
-          pages: path.resolve(__dirname, 'src/pages/'),
-          component: path.resolve(__dirname, 'src/components/'),
-          tpls: path.resolve(__dirname, 'src/tpls/')
-        },
-      }
+      ]
     }
   };
 };

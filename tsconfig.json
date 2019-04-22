@@ -5,18 +5,34 @@
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "sourceMap": true,
+        "allowJs": true,
         "removeComments": false,
-        "rootDirs": ["./src"],
-        "baseUrl": "./src",
-        "paths": {},
+        //"rootDirs": ["."],
+        "baseUrl": ".",
+        "paths": {
+            "@/*":["./src/*"],
+            "assets/*":["./public/assets/*"],
+            "components/*": ["./src/components/*"],
+            "pages/*": ["./src/pages/*"],
+            "api/*": ["./src/api/*"],
+            "utils/*": ["./src/utils/*"],
+            "constants/*": ["./src/constants/*"],
+            "layout/*": ["./src/layout/*"],
+            //"frontConf":["./public/config/conf.dev.js"]
+        },
         "jsx": "react",
-        "alwaysStrict": true,
+        //"alwaysStrict": true,
         "noUnusedLocals": true,
         "importHelpers": true,
         "experimentalDecorators": true,
         "lib": ["es7", "dom"],
         "skipLibCheck": true,
-        "typeRoots": ["node", "node_modules/@types", "./typings"]
-    }
+        "typeRoots": ["node", "node_modules/@types", "./typings"],
+    },
+    "include": [
+        "./**/*.ts",
+        "./**/*.tsx",
+        "./src/**/*.js"
+      ],
   }
   
