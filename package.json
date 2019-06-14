@@ -20,10 +20,9 @@
     "bizcharts": "^3.2.2",
     "lodash": "^4.17.10",
     "npm": "^6.4.1",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-router-dom": "^4.3.1",
-    "roo-bid": "^0.0.5"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
